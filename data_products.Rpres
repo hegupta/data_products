@@ -1,0 +1,57 @@
+Clustering of Iris data-set
+========================================================
+author: Hemanta Gupta
+date: July 03, 2016
+width:1024
+height:768
+
+Motivation
+========================================================
+
+The developed application allows users to run an unsupervised learning algorithm
+(K-means clustering) over a classical labeled data-set (the Iris data-set) used
+in supervised learning scenarios, and lets users find their own answers to the
+following questions:
+
+- How well do the results of k-means correlate with the actual labels of the data
+when the number of cluster centers is the same as the number of label classes?
+- If the labels of the data are ignored, does k-means generate the same groups as
+those which seem to stand out visually in a plot of the data?
+- How dependent is k-means on the initial random initialization of cluster centers?
+Does the partitioning of data points change significantly with different runs of
+k-means even if the number of cluster centers is held constant?
+
+Correlation of k-means and data labels
+========================================================
+```{r}
+plot(iris$Petal.Width, iris$Petal.Length, col=iris$Species, xlab = "Petal width", ylab = "Petal length")
+```
+***
+<small>The plot points are colored differently based on their labels (i.e. the
+species they belong to). Does
+k-means return the same grouping over the same features (petal width and length)
+with the number of cluster centers set to 3? Use the app to find out!</small>
+
+Actual unsupervised learning
+========================================================
+```{r}
+plot(iris$Petal.Width, iris$Petal.Length, xlab = "Petal width", ylab = "Petal length")
+```
+***
+<small>The data labels are now hidden in the plot. How many distinct groups can
+you see? Does k-means return the same grouping with the number of cluster centers
+set to this number? Use the app to find out!</small>
+
+Random initialization
+========================================================
+
+- K-means is supposedly sensitive to the initial random initialization of cluster
+centers, and can generate different groupings depending upon this initialization.
+- Does this actually hold in practice? Use the app to find out by re-running
+k-means multiple times while holding the number of cluster centers constant.
+Observe whether the grouping of data points changes from run-to-run even if
+the number of cluster centers doesn't change.
+- Tip: For best observing the changes from run-to-run, use a higher number of
+cluster centers and focus on the points in the bottom left.
+  
+Thank you!
